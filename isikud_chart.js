@@ -84,7 +84,7 @@ function bubbleChart() {
 
 			simulation
 				.force("x", d3.forceX())
-				.alpha(0.7)
+				.alpha(0.5)
 				.restart();
 			d3.select("#separate").style("display", "inline");
 			d3.select("#combine").style("display", "none");
