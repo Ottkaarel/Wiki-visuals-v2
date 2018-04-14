@@ -24,6 +24,7 @@
     color: white;
     outline: none;
   }
+
   button:hover > i{
     font-size: 45px;
     margin-top: -5px;
@@ -35,16 +36,20 @@
   }
   div #ise_liitunud {
     position: absolute;
-    left: 30%;
-    margin-top: -100px;
+    left: 50%;
+    margin-left: -350px;
+    margin-top: -80px;
     display: none;
   }
   div #kutsutud {
     position: absolute;
-    right: 30%;
-    margin-top: -100px;
+    right: 50%;
+    margin-right: -350px;
+    margin-top: -80px;
     display: none;
-
+  }
+  .uuteChart {
+    margin-top: 100px;
   }
 
   </style>
@@ -59,10 +64,15 @@
     <div class="label"  id="ise_liitunud">Ise liitunud kasutajad</div>
     <div class="label"  id="kutsutud">Kutsutud kasutajad</div>
   </div>
-  <script src="isikud_chart.js"></script>
   <button id="separate"><i class="material-icons">keyboard_arrow_left</i><i class="material-icons">keyboard_arrow_right</i></button>
   <button id="combine" style="display: none"><i class="material-icons">keyboard_arrow_right</i><i class="material-icons">keyboard_arrow_left</i></button>
 
+  <div class="uuteChart" id="uuteChart">
+    <svg></svg>
+  </div>
+
+  <script src="isikudChart.js"></script>
+  <script src="uuedChart.js"></script>
 
 
 
