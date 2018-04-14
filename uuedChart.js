@@ -39,10 +39,11 @@ function bubbleChart() {
 		.style("visibility", "hidden")
 		.style("color", "white")
 		.style("padding", "8px")
-		.style("background-color", "#4AA071")
+		.style("background-color", "#180c42")
 		.style("border-radius", "6px")
 		.style("text-align", "center")
 		.style("font-family", "monospace")
+    .style("font-size", "15px")
 		.text("");
 
 
@@ -78,16 +79,6 @@ function bubbleChart() {
     }
 
 
-
-		var minRadiusDomain = d3.min(data, function(d) {
-			return +d[columnForRadius];
-		});
-		var maxRadiusDomain = d3.max(data, function(d) {
-			return +d[columnForRadius];
-		});
-
-
-
 		var node = svg.selectAll("circle")
 		.data(data)
 		.enter()
@@ -111,7 +102,7 @@ function bubbleChart() {
     })
 		.on("mouseover", function(d) {
       simulation
-				.alpha(0.3)
+				.alpha(0.2)
 				.restart();
 			tooltip.html(d[columnForTitle] + "<br/>" + d[columnForRadius] + " "+ unitName);
 			return tooltip.style("visibility", "visible");
@@ -138,7 +129,7 @@ function bubbleChart() {
 			.attr("text-anchor", "middle")
 			.attr("font-family", "Rubik")
 			.attr("font-size", function(d) {
-				if(scaleRadius(d[columnForRadius]) > 40) return "16px";
+				if(scaleRadius(d[columnForRadius]) > 40) return "14px";
 				return "10px";
 
 			})
@@ -150,7 +141,7 @@ function bubbleChart() {
 				return ".3em";
 			})
 			.text(function(d) {
-				if(scaleRadius(d[columnForRadius]) > 20) return d[columnForTitle].substring(0, 8) + "..";
+				if(scaleRadius(d[columnForRadius]) > 15) return d[columnForTitle].substring(0, 7) + "..";
 				else return "";
 			})
       .style('cursor', 'pointer')

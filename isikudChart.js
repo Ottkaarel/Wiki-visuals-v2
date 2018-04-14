@@ -46,6 +46,7 @@ function isikudChart() {
 		.style("border-radius", "6px")
 		.style("text-align", "center")
 		.style("font-family", "monospace")
+		.style("font-size", "15px")
 		.text("");
 
 
